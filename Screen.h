@@ -5,30 +5,46 @@ using namespace std;
 
 class Screen {
 	private:
-	vector<vector<int>> _Vec;
-	int _X;
-	int _Y;
+	vector<vector<int>> _Vec; // 2D vector to represent the screen, called _Vec.
+	int _X; // _X coordinate.
+	int _Y; // _Y coordinate.
 	/* int _color; */
-	int _filler;
+	int _filler; // filler value for the screen, should be set to all 1's.
 	
 	public:
 // constructors - destructors
-	// basic constructor
+	// defualt constructor
 	Screen();
 
+	// specific screen constructor
+	Screen(int _X, int _Y, int _filler);
 	// basic destructor
 	~Screen();
 
-	// mutators, this should allow the constructors to allocate space to the screen matrix and draw it with a filler value
-	vector<vector<int>> _Print_Screen(int _X, int _Y, int _filler, vector<vector<int>> _Vec);
-	
-	// accessor to display the screen matrix
-	void _Display_Screen(int _X, int _Y, int _filler, vector<vector<int>> _Vec);
+// accessors
+	// function for creating the screen matrix
+	vector<vector<int>> _Generate_Screen(int _X, int _Y, int _filler, vector<vector<int>> _Vec);
+
+	// function to get the _X coordinate
+	void _get_X(int _X);
+
+	// function to get the _Y coordinate
+	void _get_Y(int _Y);
+
+	// function to get the _filler value
+	void _get_filler(int _filler);
 /*
-// accessors - and mutators
-	// checks for the color of the space in the matrix by checking for the integer value associated with the x and y position of the space in the matrix
-	_CheckColor();
+// mutators
+	// Function for printing the screen matrix
+	void _Print_Screen(int _X, int _Y, int _filler, vector<vector<int>> _Vec);
 	
-	// basic mutators, used to update the 
-	_Change color();*/
-};
+	// function to set the _X coordinate
+	void _set_X(int _X);
+
+	// function to set the _Y coordinate
+	void _set_Y(int _Y);
+
+	// function to set the _filler value
+	void _set_filler(int _filler);
+*/
+} myScreen;
