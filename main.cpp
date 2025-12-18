@@ -5,14 +5,12 @@
 
 using namespace std;
 
-int main(Screen) {
+int main() {
 	cout << "This is a small program designed to help me practice my programming skills." << endl;
 	cout << "This prgram allows you to make a digital display using very basic graphics." << endl;
 	
 	cout << "?instructions?" << endl; //TODO: implament proper instructions for the user
-	screen::Screen() myScreen;
-	vector<vector<int>> display = myScreen._Print_Screen(5, 6, 1, myScreen._Vec);
-	myScreen._Display_Screen(5, 6, 1, display);
+	Screen myScreen(5, 6, 1);
 
 	int number;
 	cout << "press 0 to leave." << endl;
