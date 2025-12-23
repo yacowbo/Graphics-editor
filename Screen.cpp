@@ -7,10 +7,12 @@ using namespace std;
 Screen::Screen() {return;}
 
 Screen::Screen(int _X, int _Y, int _filler) {
-	_Vec = vector<vector<int>> (_X, vector<int>(_Y, _filler));
 	this->_X = _X;
 	this->_Y = _Y;
 	this->_filler = _filler;
+	_Matrix = vector<vector<int>> (_X, vector<int>(_Y, _filler));
+	_Generate_Screen(_X, _Y, _filler, _Matrix) << _Matrix;
+	cout << "Screen constructor called." << endl;
 	return;
 }
 
@@ -19,24 +21,39 @@ Screen::~Screen() {
 	return;
 }
 
-vector<vector<int>> Screen::_Generate_Screen(int _X, int _Y, int _filler, vector<vector<int>> _Vec)  {
-	_Vec = vector<vector<int>> (_X, vector<int>(_Y, _filler));
-	return _Vec;
+vector<vector<int>> Screen::_Generate_Screen(int X, int Y, int filler, vector<vector<int>>)  {
+	_Matrix = vector<vector<int>> (X, vector<int>(Y, filler));
+	return;
 	}
 
-void Screen::_get_X(int _X) {
-	_X = this->_X;
-	return;
+int Screen::_get_X() {
+	int X = 5;
+	X = this->_X;
+	return X;
 }
 
-void Screen::_get_Y(int _Y) {
-	_Y = this->_Y;
-	return;
+int Screen::_get_Y() {
+	int Y = 6;
+	Y = this->_Y;
+	return Y;
 }
 
-void Screen::_get_filler(int _filler) {
-	_filler = this->_filler;
-	return;
+int Screen::_get_filler() {
+	int filler = 1;
+	filler = this->_filler;
+	return filler;
+}
+
+void Screen::_set_X(int _X) {
+	this->_X = _X;
+}
+
+void Screen::_set_Y(int _Y) {
+	this->_Y = _Y;
+}
+
+void Screen::_set_filler(int _filler) {
+	this->_filler = _filler;
 }
 
 /*

@@ -1,11 +1,14 @@
-#include <vector>
+#ifndef Screen_H
+#define Screen_H
+
 #include <iostream>
+#include <vector>
 
 using namespace std;
-
 class Screen {
+
 	private:
-	vector<vector<int>> _Vec; // 2D vector to represent the screen, called _Vec.
+// member variables
 	int _X; // _X coordinate.
 	int _Y; // _Y coordinate.
 	/* int _color; */
@@ -16,28 +19,26 @@ class Screen {
 	// defualt constructor
 	Screen();
 
-	// specific screen constructor
 	Screen(int _X, int _Y, int _filler);
+
 	// basic destructor
 	~Screen();
 
 // accessors
 	// function for creating the screen matrix
-	vector<vector<int>> _Generate_Screen(int _X, int _Y, int _filler, vector<vector<int>> _Vec);
+	vector<vector<int>> _Generate_Screen(int X, int Y, int filler, vector<vector<int>>);
 
+// getters
 	// function to get the _X coordinate
-	void _get_X(int _X);
+	int _get_X();
 
 	// function to get the _Y coordinate
-	void _get_Y(int _Y);
+	int _get_Y();
 
 	// function to get the _filler value
-	void _get_filler(int _filler);
-/*
-// mutators
-	// Function for printing the screen matrix
-	void _Print_Screen(int _X, int _Y, int _filler, vector<vector<int>> _Vec);
-	
+	int _get_filler();
+
+// setters
 	// function to set the _X coordinate
 	void _set_X(int _X);
 
@@ -46,5 +47,5 @@ class Screen {
 
 	// function to set the _filler value
 	void _set_filler(int _filler);
-*/
-} myScreen;
+};
+#endif

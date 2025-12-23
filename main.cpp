@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include "Screen.h"
-#include "Screen.cpp"
 
 using namespace std;
 
