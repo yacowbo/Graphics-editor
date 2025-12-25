@@ -1,16 +1,41 @@
+/**
+ * @file main.cpp
+ * @author Jordin goerz (Github: yacowbo ; Email: jordinrialey@gmail.com)
+ * @brief Main file for the Screen class demonstration.
+ * @version 0.1
+ * @date 2025-12-23
+ *
+ * @copyright Copyright (c) 2025
+ * @description This is the main file for a simple C++ program that demonstrates the usage of the Screen class.
+ * The program initializes a Screen object and provides basic user interaction to exit the program.
+ * 
+ * @details The program begins by displaying introductory messages to the user, explaining its purpose.
+ * It then creates an instance of the Screen class with specified dimensions and filler value.
+ * The user is prompted to press '0' to exit the program, with input validation to
+ * ensure correct input.
+ * 
+ * @note This implementation adheres to the C++17 standard. 
+ */
+
 #include <iostream>
 #include <vector>
 #include "Screen.h"
+#include "Cursor.h"
+#include <cstring>
+#include <iomanip>
 
 using namespace std;
 
-int main() {
-	cout << "This is a small program designed to help me practice my programming skills." << endl;
-	cout << "This prgram allows you to make a digital display using very basic graphics." << endl;
-	
-	cout << "?instructions?" << endl; //TODO: implament proper instructions for the user
-	Screen myScreen(5, 6, 1);
+string intro = "Welcome to the Screen Demo Program!\n"
+               "This program demonstrates the usage of the Screen class.\n"
+               "You can create a screen with specific dimensions and a filler value.\n"
+               "Press '0' to exit the program.";
 
+int main() {
+	Screen::Screen(int S_X, int S_Y, char C_filler);
+	Cursor::Cursor(int C_X, int C_Y, char C_pixel);
+	cout << intro << endl; //TODO: implement proper instructions for the user
+	Screen theScreen(5, 6, '#');
 	int number;
 	cout << "press 0 to leave." << endl;
 	cin >> number;

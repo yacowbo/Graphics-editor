@@ -9,7 +9,9 @@
  * 
  * @description: This file contains the implementation of the Cursor class, which represents a cursor with x and y coordinates and a color attribute.
  * The class provides constructors, destructors, and getter and setter methods for its attributes.
+ * 
  * @details The Cursor class encapsulates the properties of a cursor, allowing for easy manipulation and retrieval of its position and color.
+ * 
  * @note This implementation adheres to the C++17 standard.
  */
 
@@ -45,7 +47,10 @@ class Cursor {
         char getColor() const { return C_color; } // Getter for color
 
     // setters
-        void setX(int x) { C_X = x; } // Setter for X coordinate
+        void setX(int x) { // Setter for X coordinate
+            askCursorX() << x;
+            C_X = x;
+        };
         
         void setY(int y) { C_Y = y; } // Setter for Y coordinate
         
@@ -54,5 +59,8 @@ class Cursor {
     // friend functions
         void passCursorData(vector<vector<char>> C_position) const {
             cout << "Cursor Position: (" << C_position << "), Color: " << C_color << endl;
-        }    
+        }
+        
+    int askCursorX() const {
+        return C_X;
     };

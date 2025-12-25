@@ -1,18 +1,41 @@
+/**
+ * @file Screen.cpp
+ * @author Jordin Goerz (Github: yacowbo ; Email: jordinrialey@gmail.com)
+ * @brief Implementation of the Screen class, which manages screen properties and matrix generation.
+ * @version 0.1
+ * @date 2025-12-23
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ * @description This file contains the implementation of the Screen class, which manages screen properties 
+ * such as width (X), height (Y), and filler character. The class provides constructors, destructors, and methods 
+ * to generate and display a 2D character matrix representing the screen.
+ * 
+ * @details The Screen class encapsulates the properties of a screen, allowing for creation and manipulation
+ * of a 2D character matrix with specified dimensions. Methods are provided to retrieve and modify screen
+ * dimensions and the filler character used for matrix initialization and display.
+ * 
+ * @note This implementation uses C++11 features (vector and standard library).
+ */
+
 #include <iostream>
 #include <vector>
 #include "Screen.h"
+#include "Cursor.h"
 
 using namespace std;
 
-Screen::Screen() {return;}
+Screen::Screen() {
+	cout << "Screen default constructor called." << endl;	
+	return;
+}
 
-Screen::Screen(int _X, int _Y, int _filler) {
-	this->_X = _X;
-	this->_Y = _Y;
-	this->_filler = _filler;
-	_Matrix = vector<vector<int>> (_X, vector<int>(_Y, _filler));
-	_Generate_Screen(_X, _Y, _filler, _Matrix) << _Matrix;
-	cout << "Screen constructor called." << endl;
+Screen::Screen(int S_X, int S_Y, char S_filler) {
+	this->S_X = S_X;
+	this->S_Y = S_Y;
+	this->S_filler = S_filler;
+	_Print_Screen();
+	cout << "Screen parameterized constructor called." << endl;
 	return;
 }
 
@@ -21,47 +44,43 @@ Screen::~Screen() {
 	return;
 }
 
-vector<vector<int>> Screen::_Generate_Screen(int X, int Y, int filler, vector<vector<int>>)  {
-	_Matrix = vector<vector<int>> (X, vector<int>(Y, filler));
-	return;
-	}
-
 int Screen::_get_X() {
-	int X = 5;
-	X = this->_X;
+	int X;
+	X = this-> S_X;
 	return X;
 }
 
 int Screen::_get_Y() {
-	int Y = 6;
-	Y = this->_Y;
+	int Y;
+	Y = this-> S_Y;
 	return Y;
 }
 
-int Screen::_get_filler() {
-	int filler = 1;
-	filler = this->_filler;
+char Screen::_get_filler() {
+	char filler = '#';
+	filler = this-> S_filler;
 	return filler;
 }
 
 void Screen::_set_X(int _X) {
-	this->_X = _X;
+	this-> S_X = _X;
 }
 
 void Screen::_set_Y(int _Y) {
-	this->_Y = _Y;
+	this-> S_Y = _Y;
 }
 
-void Screen::_set_filler(int _filler) {
-	this->_filler = _filler;
+void Screen::_set_filler(char _filler) {
+	this-> S_filler = _filler;
 }
 
-/*
-void Screen::_Print_Screen(int _X, int _Y, int _filler, vector<vector<int>> _Vec) {
-	for (int i = 0; i < _X; i++) {
-		for (int j = 0; j < _Y; j++) {
-			cout << _Vec[i][j] << " ";
+vector<vector<char>> Screen::_Print_Screen() {
+	vector<vector<char>> _Matrix(S_X, vector<char>(S_Y, S_filler));
+	for (int i = 0; i < S_X; i++) {
+		for (int j = 0; j < S_Y; j++) {
+			cout << _Matrix[i][j] << " ";
 		}
 		cout << endl;
 	}
-}*/
+	return _Matrix;
+}
