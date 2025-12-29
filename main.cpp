@@ -32,10 +32,19 @@ string intro = "Welcome to the Screen Demo Program!\n"
                "Press '0' to exit the program.";
 
 int main() {
-	Screen::Screen(int S_X, int S_Y, char C_filler);
-	Cursor::Cursor(int C_X, int C_Y, char C_pixel);
 	cout << intro << endl; //TODO: implement proper instructions for the user
 	Screen theScreen(5, 6, '#');
+	cout << "Screen created with dimensions 5x6 and filler '#'" << endl;
+	cout << "Please, enter your cursor information, starting with the X coordinate."
+	<< endl;
+	int cursorX;
+	cin >> cursorX;
+	cout << "Now, please enter your information for the Y coordinate."
+	<< endl;
+	int cursorY;
+	cin >> cursorY;
+	cout << "" << endl;
+	Cursor theCursor(cursorX, cursorY, '*');
 	int number;
 	cout << "press 0 to leave." << endl;
 	cin >> number;

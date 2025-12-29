@@ -57,10 +57,17 @@ class Cursor {
         void setColor(char color) { C_color = color; } // Setter for color
 
     // friend functions
-        void passCursorData(vector<vector<char>> C_position) const {
-            cout << "Cursor Position: (" << C_position << "), Color: " << C_color << endl;
+        int askCursorX() const {
+            cout << "Please enter the X coordinate for the cursor: ";
+            int x;
+            cin >> x;
+            return x;
         }
-        
-    int askCursorX() const {
-        return C_X;
+
+        int askCursorY() const {
+            cout << "Please enter the Y coordinate for the cursor: ";
+            int y;
+            cin >> y;
+            return y;
+        }
     };
