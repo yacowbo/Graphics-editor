@@ -1,25 +1,65 @@
-#ADT based graphics designing program#
 
-overview:
-This program is designed to allow the user to create very basic pixel art designs, Using text based input within the consal, the user will be prompted to chose the height and width of the canvas they are working on and then they will be askked which color they would like to use colors are denoted by the first leter of the colors name itself the user will then use the paint/erase functions to color the desired design onto a matrix (ie: the canvas from before) after the user is satisfied with their work they can then enter "save" which will save the design as a .md file, typing "save" again will update this file however if the user is completly satisfied with their design they may type "save and exit" to do so, alternativly if the user choses to they may type "exit" which will exit immediatly which will delete any current design that hasn't be saved
+# Graphics Editor
 
-program loop:
-system generates a blank screen, and then prompts the user for a set of three numbers;
+A C++ screen and cursor management system demonstrating object-oriented design principles.
 
-the 1st number is the _X coordinate,
-the 2nd number is the _Y coordinate,
-the 3rd number is the _color of the space which the _X and _Y coordinates point to
+## Overview
 
-the screen function will then reprint the screen with the new colored space
-	
-the main function will then ask for another set of numbers
+This project provides `Screen` and `Cursor` classes for managing a 2D character-based display. It allows users to create screens with custom dimensions and filler characters, and position cursors within them.
 
-this will repeat until the user decides to save their progress or save and exit the program, this also allows for the user to make designs
+## Features
 
-needed member functions for the Screen class:
-Screen()
-Screen(int _X, int _Y, int _filler)
-~Screen()
-vector<vector<int>> _Generate_Screen(int X, int Y, int filler, vector<vector<int>> _Matrix)
+- **Screen Management**: Create screens with specified dimensions and filler characters
+- **Cursor Positioning**: Define cursor position (X, Y) and appearance
+- **2D Matrix Display**: Generate and display character matrices
+- **Getter/Setter Methods**: Easy property access and modification
 
-needed member functions for the cursor class:
+## Project Structure
+
+```
+.
+├── main.cpp           # Program entry point and user interaction
+├── Screen.h/.cpp      # Screen class declaration and implementation
+├── Cursor.h/.cpp      # Cursor class declaration and implementation
+├── .vscode/
+│   ├── launch.json    # Debug configuration
+│   └── tasks.json     # Build configuration
+└── README.md
+```
+
+## Requirements
+
+- **Compiler**: g++-13 or later
+- **Standard**: C++17
+- **Debugger**: GDB
+
+## Building & Running
+
+**Build**:
+```bash
+g++-13 -fdiagnostics-color=always -g main.cpp Screen.cpp Cursor.cpp -o program
+```
+
+**Run**:
+```bash
+./program
+```
+
+**VS Code Debug**: Press `F5` to launch the debugger
+
+## Usage Example
+
+```cpp
+Screen theScreen(5, 6, '#');  // Create 5x6 screen with '#' filler
+Cursor theCursor(2, 3, '*');  // Create cursor at (2,3) with '*' symbol
+```
+
+## Author
+
+Jordin Goerz  
+GitHub: [yacowbo](https://github.com/yacowbo)  
+Email: jordinrialey@gmail.com
+
+## License
+
+Copyright (c) 2025
